@@ -1,0 +1,17 @@
+{
+  "status": "VERIFIED_QWEN_SYNTHETIC_ROUTER_TRAINING_V0_3",
+  "version": "0.3.0-qwen-synthetic",
+  "device": "cuda",
+  "samples": 7,
+  "steps": 1200,
+  "initial_loss": 4.167990207672119,
+  "final_loss": 0.0,
+  "accuracy": 1.0,
+  "base_frozen": true,
+  "training_started": true,
+  "real_mk7_dataset_loaded": false,
+  "gemma_loaded": false,
+  "golden_training_loaded": false,
+  "optimizer_updated_router_and_bridge_only": true,
+  "checkpoint": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v0.3.0-qwen-synthetic\\qwen-router-v0.3-synthetic.pt"
+}
