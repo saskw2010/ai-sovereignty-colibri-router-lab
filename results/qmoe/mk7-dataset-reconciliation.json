@@ -1,0 +1,169 @@
+{
+  "status": "VERIFIED_RECONCILIATION_READ_ONLY",
+  "jsonl_files": 18,
+  "records_scanned": 2000,
+  "split_counts": {
+    "test": 200,
+    "train": 1600,
+    "validation": 200
+  },
+  "batch_counts": {
+    "batch-01": 400,
+    "batch-02": 400,
+    "batch-03": 400,
+    "batch-04": 400,
+    "batch-05": 400
+  },
+  "unique_ids": 1000,
+  "duplicate_id_values": 1000,
+  "manifest_expected_total": 1000,
+  "manifest_reconciles": false,
+  "dataset_modified": false,
+  "training_started": false,
+  "files": [
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-01-foundations\\test.jsonl",
+      "records": 20,
+      "splits": {
+        "test": 20
+      },
+      "unique_ids": 20
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-01-foundations\\train.jsonl",
+      "records": 160,
+      "splits": {
+        "train": 160
+      },
+      "unique_ids": 160
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-01-foundations\\validation.jsonl",
+      "records": 20,
+      "splits": {
+        "validation": 20
+      },
+      "unique_ids": 20
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-02-classification-systems\\test.jsonl",
+      "records": 20,
+      "splits": {
+        "test": 20
+      },
+      "unique_ids": 20
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-02-classification-systems\\train.jsonl",
+      "records": 160,
+      "splits": {
+        "train": 160
+      },
+      "unique_ids": 160
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-02-classification-systems\\validation.jsonl",
+      "records": 20,
+      "splits": {
+        "validation": 20
+      },
+      "unique_ids": 20
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-03-mk7-canonical\\test.jsonl",
+      "records": 20,
+      "splits": {
+        "test": 20
+      },
+      "unique_ids": 20
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-03-mk7-canonical\\train.jsonl",
+      "records": 160,
+      "splits": {
+        "train": 160
+      },
+      "unique_ids": 160
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-03-mk7-canonical\\validation.jsonl",
+      "records": 20,
+      "splits": {
+        "validation": 20
+      },
+      "unique_ids": 20
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-04-mk7-applied\\test.jsonl",
+      "records": 20,
+      "splits": {
+        "test": 20
+      },
+      "unique_ids": 20
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-04-mk7-applied\\train.jsonl",
+      "records": 160,
+      "splits": {
+        "train": 160
+      },
+      "unique_ids": 160
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-04-mk7-applied\\validation.jsonl",
+      "records": 20,
+      "splits": {
+        "validation": 20
+      },
+      "unique_ids": 20
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-05-robustness\\test.jsonl",
+      "records": 20,
+      "splits": {
+        "test": 20
+      },
+      "unique_ids": 20
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-05-robustness\\train.jsonl",
+      "records": 160,
+      "splits": {
+        "train": 160
+      },
+      "unique_ids": 160
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\batch-05-robustness\\validation.jsonl",
+      "records": 20,
+      "splits": {
+        "validation": 20
+      },
+      "unique_ids": 20
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\combined\\test.jsonl",
+      "records": 100,
+      "splits": {
+        "test": 100
+      },
+      "unique_ids": 100
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\combined\\train.jsonl",
+      "records": 800,
+      "splits": {
+        "train": 800
+      },
+      "unique_ids": 800
+    },
+    {
+      "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\combined\\validation.jsonl",
+      "records": 100,
+      "splits": {
+        "validation": 100
+      },
+      "unique_ids": 100
+    }
+  ]
+}
