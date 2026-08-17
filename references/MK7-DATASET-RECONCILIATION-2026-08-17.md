@@ -19,7 +19,14 @@ The reconciliation scanned the existing JSONL files without modifying the datase
 | Dataset modified | false |
 | Training started | false |
 
-The 2,000 scanned records consist of the five `batch-*` trees plus the `combined` tree. The `combined` files repeat the same logical IDs represented by the batch files; this is a source-selection issue, not evidence of 2,000 unique examples.
+The 2,000 scanned records consist of the five `batch-*` trees plus the `combined` tree. A second read-only comparison hashed every logical record and verified:
+
+- 1,000 unique IDs in the batch view and 1,000 in the combined view;
+- identical ID sets;
+- identical canonical record content for every ID;
+- zero batch-only IDs, combined-only IDs, or content mismatches.
+
+Therefore, the extra 1,000 scanned rows are exact duplicates caused by enumerating both views. This is a source-selection issue, not evidence of 2,000 unique examples.
 
 ## Decision gate
 
@@ -37,7 +44,7 @@ The gated runner is not permitted to infer these values and will not train while
 
 ## Safe next action
 
-Choose exactly one canonical view for the real run—`combined` or the five batch trees—then regenerate and sign the manifest. Until that decision is recorded, only read-only audits and synthetic/versioned smoke tests may continue.
+Recommended canonical view: `combined`, because it is the already assembled single view and has been proven byte-equivalent at the logical-record level to the five batch trees. The owner must still record this choice and regenerate/sign the manifest. Until that decision is recorded, only read-only audits and synthetic/versioned smoke tests may continue.
 
 ## Related evidence
 
