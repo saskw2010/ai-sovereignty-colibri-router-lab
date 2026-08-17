@@ -35,6 +35,7 @@
 - Frozen Experts / Router-only diagnostic بلا تحديث أوزان: `VERIFIED_NO_UPDATE`.
 - MixLoRA local reference tests: `3/3 PASSED`.
 - Dense + Frozen LoRA + learned Top-2 Router control: `VERIFIED`.
+- Synthetic Router training with frozen Base/Experts: `VERIFIED`.
 - GitHub staging محلي: commit history جاهزة للمراجعة.
 - تدريب MK7: `NOT_STARTED`.
 - رفع Hugging Face: `PENDING_OWNER_REVIEW`.
@@ -68,6 +69,13 @@
 - اعتماد Dense Base مجمد + Frozen LoRA Experts + learned Top-2 Router.
 - إنشاء Router Contract وExpert Registry.
 - التحقق من PyTorch control بلا Dataset أو optimizer step.
+
+### 2026-08-17 — Synthetic Router Training
+
+- تدريب Router فقط على 512 synthetic samples و120 خطوة.
+- routing accuracy: `100%`.
+- Base وLoRA Experts مجمّدة.
+- لا Gemma ولا MK7 Dataset ولا Golden Training.
 
 ### 2026-08-17 — Reference Research
 
