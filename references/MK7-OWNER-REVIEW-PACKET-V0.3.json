@@ -1,0 +1,40 @@
+{
+  "status": "READY_FOR_OWNER_REVIEW",
+  "approved": false,
+  "owner": "",
+  "approved_at": "",
+  "dataset": {
+    "id": "sky365-mustafian-knowledge-v0.1",
+    "canonical_view_recommendation": "combined",
+    "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\combined",
+    "records": 1000,
+    "splits": {"train": 800, "validation": 100, "test": 100},
+    "combined_view_sha256": "65c40626b5cc867c0828c349eb39a8e8aaac0899ed0cf91a1f23972978582460",
+    "train_sha256": "9119a3d7451ee0303bfc8c07f18997dbdeebc42ad0c6aea3861077b28632c992",
+    "validation_sha256": "fae2a7e09405dda48a3fe2201b77f12dc5b4a3134092112b176502e74a53a3b5",
+    "test_sha256": "41505e31425eb1d5c5b10e87846fd5e130878aab09423eb041efdf0fd73a4461"
+  },
+  "training_scope": {
+    "allowed_scope_recommendation": "router_only",
+    "max_steps": 0,
+    "base_model": "",
+    "base_revision_or_hash": "",
+    "registry_version": "router-v0.2.0",
+    "checkpoint_destination": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v0.3.0-real",
+    "evaluation_contract": ""
+  },
+  "required_owner_actions": [
+    "Confirm canonical dataset view and hash",
+    "Select exact base model and revision/hash",
+    "Confirm registry version or provide a new immutable version",
+    "Set an explicit maximum step count and evaluation contract",
+    "Set approved=true with owner identity and timestamp"
+  ],
+  "safety": {
+    "training_started": false,
+    "dataset_modified": false,
+    "gemma_loaded": false,
+    "golden_training_loaded": false,
+    "v0_1_and_v0_2_unchanged": true
+  }
+}
