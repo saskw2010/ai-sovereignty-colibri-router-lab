@@ -33,10 +33,17 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Verify documentation entry points
+        shell: bash
+        run: |
+          test -f index.html
+          test -f docs/index.html
+          test -f results/MK7-REAL-ROUTER-V1.1-EXPERTS-REPORT-2026-08-18.html
+          grep -q "MK7-REAL-ROUTER-V1.1-EXPERTS-REPORT-2026-08-18.html" docs/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # Publish the repository so root/, docs/, results/, and assets remain linkable.
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
