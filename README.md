@@ -4,6 +4,10 @@
 
 مختبر بحثي موثق لبناء Router قابل للقياس، وفهم Mixture-of-Experts، وتطوير أساس MK7 مع الحفاظ على استقلال البيانات والأوزان.
 
+![Colibri MK7 LoRA Mixer and Router](docs/images/colibri-mk7-lora-mixer-infographic-v1.png)
+
+الصورة تلخص المسار: Base مجمّد، LoRA Adapters مستقلة، ثم اختيار اختياري بين Mixer Top-2 أو Specialist Top-1 أو Shared/Unknown Fallback.
+
 ## الحالة الحالية — 2026-08-17
 
 - QMoE-400 FP32 smoke على CPU وQuadro P2000: `VERIFIED`.
