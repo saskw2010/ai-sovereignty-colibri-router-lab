@@ -1,0 +1,38 @@
+{
+  "status": "CANONICAL_VIEW_PROPOSED_NOT_APPROVED",
+  "dataset_id": "sky365-mustafian-knowledge-v0.1",
+  "framework": "Mustafian Knowledge — Seven-Lens Framework (MK-7)",
+  "canonical_view": "combined",
+  "path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\combined",
+  "records": 1000,
+  "splits": {
+    "train": 800,
+    "validation": 100,
+    "test": 100
+  },
+  "files": {
+    "train.jsonl": {
+      "records": 800,
+      "sha256": "9119a3d7451ee0303bfc8c07f18997dbdeebc42ad0c6aea3861077b28632c992"
+    },
+    "validation.jsonl": {
+      "records": 100,
+      "sha256": "fae2a7e09405dda48a3fe2201b77f12dc5b4a3134092112b176502e74a53a3b5"
+    },
+    "test.jsonl": {
+      "records": 100,
+      "sha256": "41505e31425eb1d5c5b10e87846fd5e130878aab09423eb041efdf0fd73a4461"
+    }
+  },
+  "combined_view_sha256": "65c40626b5cc867c0828c349eb39a8e8aaac0899ed0cf91a1f23972978582460",
+  "equivalence_evidence": {
+    "batch_view_same_ids": true,
+    "batch_view_same_content": true,
+    "batch_only_ids": 0,
+    "combined_only_ids": 0,
+    "content_mismatches": 0
+  },
+  "owner_approval_required": true,
+  "dataset_modified": false,
+  "training_started": false
+}
