@@ -1,0 +1,15 @@
+{
+  "status": "VERIFIED_BASE_PRESENT_NOT_TRAINING_AUTHORIZATION",
+  "model_id": "Qwen/Qwen2.5-0.5B",
+  "hub_revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+  "license": "apache-2.0",
+  "local_path": "F:\\AI-OPEN-MODELS\\qwen2.5-0.5b",
+  "weight_file": "model.safetensors",
+  "weight_sha256": "88C142557820CCAD55BB59756BFCFCF891DE9CC6202816BD346445188A0ED342",
+  "weight_bytes": 988097824,
+  "fp32_forward_smoke": true,
+  "frozen_lora_compatibility_smoke": true,
+  "training_authorized": false,
+  "training_started": false,
+  "dataset_loaded": false
+}
