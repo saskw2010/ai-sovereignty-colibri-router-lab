@@ -1,0 +1,22 @@
+{
+  "status": "VERIFIED_V03_PREFLIGHT_READ_ONLY",
+  "checks": {
+    "exists:train.jsonl": true,
+    "sha256:train.jsonl": true,
+    "records:train.jsonl": true,
+    "exists:validation.jsonl": true,
+    "sha256:validation.jsonl": true,
+    "records:validation.jsonl": true,
+    "exists:test.jsonl": true,
+    "sha256:test.jsonl": true,
+    "records:test.jsonl": true,
+    "manifest_status_is_unapproved": true,
+    "contract_is_draft": true,
+    "training_not_started": true,
+    "dataset_not_modified": true,
+    "router_only_scope": true,
+    "test_unseen_required": true
+  },
+  "training_started": false,
+  "dataset_modified": false
+}
