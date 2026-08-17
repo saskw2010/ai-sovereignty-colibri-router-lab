@@ -17,11 +17,11 @@
   "training_scope": {
     "allowed_scope_recommendation": "router_only",
     "max_steps": 0,
-    "base_model": "",
-    "base_revision_or_hash": "",
+    "base_model": "Qwen/Qwen2.5-0.5B",
+    "base_revision_or_hash": "060db6499f32faf8b98477b0a26969ef7d8b9987",
     "registry_version": "router-v0.2.0",
     "checkpoint_destination": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v0.3.0-real",
-    "evaluation_contract": ""
+    "evaluation_contract": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v0.3.0-preflight\\evaluation-contract-v0.3.json"
   },
   "required_owner_actions": [
     "Confirm canonical dataset view and hash",
