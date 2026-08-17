@@ -26,7 +26,7 @@
   },
   "smoke": {
     "cpu_fp32_forward": "VERIFIED",
-    "p2000_fp32_forward": "PENDING",
+    "p2000_fp32_forward": "VERIFIED",
     "router_only_gradient_diagnostic": "VERIFIED",
     "training": "NOT_STARTED"
   }
