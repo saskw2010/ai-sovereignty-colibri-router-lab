@@ -1,0 +1,38 @@
+{
+  "version": "mk7-router-evaluation-v0.3",
+  "scope": "router_only",
+  "dataset_view": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1\\combined",
+  "splits": {
+    "train": "train.jsonl",
+    "validation": "validation.jsonl",
+    "test": "test.jsonl"
+  },
+  "required_metrics": [
+    "overall_accuracy",
+    "per_pillar_accuracy",
+    "top1_accuracy",
+    "top2_hit_rate",
+    "router_entropy",
+    "expert_utilization",
+    "load_balance_coefficient",
+    "confusion_matrix"
+  ],
+  "required_comparisons": [
+    "frozen_router_baseline",
+    "trained_router_candidate",
+    "specialist_mode",
+    "mixer_mode",
+    "plug_and_play_mode"
+  ],
+  "acceptance_rules": {
+    "test_split_must_remain_unseen": true,
+    "base_parameters_must_be_unchanged": true,
+    "adapter_parameters_must_be_unchanged": true,
+    "only_router_parameters_may_change": true,
+    "no_nan_or_inf_metrics": true,
+    "checkpoint_must_be_written_under": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v0.3.0-real",
+    "previous_versions_must_remain_unchanged": true
+  },
+  "status": "DRAFT_FOR_OWNER_REVIEW",
+  "training_started": false
+}
