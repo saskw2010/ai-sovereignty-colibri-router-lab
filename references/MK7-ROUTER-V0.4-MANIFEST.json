@@ -1,0 +1,31 @@
+{
+  "version": "0.4.0-qwen-synthetic",
+  "status": "FROZEN_RESEARCH_CHECKPOINT",
+  "base": "Qwen/Qwen2.5-0.5B",
+  "checkpoint": {
+    "path": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v0.4.0-qwen-synthetic\\qwen-router-v0.4-synthetic.pt",
+    "bytes": 117785,
+    "sha256": "A540F5B39AD29EC3AD3ED5456A5286FA2D1BAE8558BC761D575EE0B565F4BD08"
+  },
+  "training": {
+    "synthetic_samples": 35,
+    "train_samples": 28,
+    "validation_samples": 7,
+    "steps": 1000,
+    "scope": "bridge_and_router_only",
+    "base_frozen": true
+  },
+  "evaluation": {
+    "train_accuracy": 1.0,
+    "validation_top1_accuracy": 0.7142857,
+    "validation_top2_hit_rate": 1.0,
+    "runtime_verified": true
+  },
+  "exclusions": {
+    "real_mk7_dataset_loaded": false,
+    "gemma_loaded": false,
+    "golden_training_loaded": false,
+    "previous_versions_overwritten": false
+  },
+  "immutability": "Do not overwrite; create a sibling version for every new experiment."
+}
