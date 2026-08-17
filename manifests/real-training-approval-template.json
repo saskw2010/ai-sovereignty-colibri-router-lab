@@ -1,0 +1,16 @@
+{
+  "approved": false,
+  "owner": "",
+  "approved_at": "",
+  "base_model": "",
+  "base_revision_or_hash": "",
+  "registry_version": "router-v0.2.0",
+  "dataset_id": "sky365-mustafian-knowledge-v0.1",
+  "dataset_path": "Q:\\Colibri\\training\\datasets\\mk7\\v0.1",
+  "dataset_manifest_hash": "",
+  "allowed_training_scope": "router_only",
+  "max_steps": 0,
+  "checkpoint_destination": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v0.3.0-real",
+  "evaluation_contract": "",
+  "notes": "Fill and set approved=true only after explicit owner review. This file is not an authorization until completed."
+}
