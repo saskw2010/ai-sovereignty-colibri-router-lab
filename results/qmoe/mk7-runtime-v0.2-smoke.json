@@ -1,0 +1,44 @@
+{
+  "status": "VERIFIED_MK7_ADAPTER_RUNTIME_V0_2",
+  "version": "0.2.0",
+  "modes": {
+    "mixer": {
+      "selected": [
+        "R_structure_relations",
+        "M_method_validation"
+      ],
+      "weights": [
+        0.7553228139877319,
+        0.24467714130878448
+      ],
+      "output_shape": [
+        6,
+        32
+      ]
+    },
+    "specialist": {
+      "selected": "R_structure_relations",
+      "output_shape": [
+        6,
+        32
+      ]
+    },
+    "plug_and_play": {
+      "requested": "R_structure_relations",
+      "loaded_on_demand": true,
+      "output_shape": [
+        6,
+        32
+      ]
+    }
+  },
+  "base_frozen": true,
+  "adapters_frozen": true,
+  "router_frozen_for_runtime": true,
+  "training_started": false,
+  "dataset_loaded": false,
+  "gemma_loaded": false,
+  "golden_training_loaded": false,
+  "v0_1_untouched": true,
+  "interpretation": "Runtime contract smoke using synthetic frozen adapters; not a real-base quality evaluation."
+}

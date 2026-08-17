@@ -1,0 +1,75 @@
+{
+  "version": "0.2.0",
+  "base": {
+    "id": "synthetic-dense-base-v0.2",
+    "frozen": true
+  },
+  "experts": [
+    {
+      "id": "O_subject_ontology",
+      "adapter_path": "synthetic://O_subject_ontology",
+      "frozen": true,
+      "flags": [
+        "mk7_pillar"
+      ]
+    },
+    {
+      "id": "E_source_evidence",
+      "adapter_path": "synthetic://E_source_evidence",
+      "frozen": true,
+      "flags": [
+        "mk7_pillar"
+      ]
+    },
+    {
+      "id": "R_structure_relations",
+      "adapter_path": "synthetic://R_structure_relations",
+      "frozen": true,
+      "flags": [
+        "mk7_pillar"
+      ]
+    },
+    {
+      "id": "M_method_validation",
+      "adapter_path": "synthetic://M_method_validation",
+      "frozen": true,
+      "flags": [
+        "mk7_pillar"
+      ]
+    },
+    {
+      "id": "A_function_application",
+      "adapter_path": "synthetic://A_function_application",
+      "frozen": true,
+      "flags": [
+        "mk7_pillar"
+      ]
+    },
+    {
+      "id": "T_time_evolution",
+      "adapter_path": "synthetic://T_time_evolution",
+      "frozen": true,
+      "flags": [
+        "mk7_pillar"
+      ]
+    },
+    {
+      "id": "H_human_value_context",
+      "adapter_path": "synthetic://H_human_value_context",
+      "frozen": true,
+      "flags": [
+        "mk7_pillar"
+      ]
+    }
+  ],
+  "router": {
+    "id": "router-v0.1.0",
+    "top_k": 2,
+    "frozen": true
+  },
+  "modes": [
+    "mixer",
+    "specialist",
+    "plug_and_play"
+  ]
+}
