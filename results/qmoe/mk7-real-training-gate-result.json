@@ -1,0 +1,15 @@
+{
+  "status": "READY_FOR_OWNER_REVIEW",
+  "checks": {
+    "dataset_exists": true,
+    "preflight_verified": true,
+    "owner_approval": false,
+    "base_selected": false,
+    "registry_selected": false,
+    "explicit_start_flag": false
+  },
+  "training_started": false,
+  "dataset_modified": false,
+  "optimizer_step": false,
+  "reason": "No real training is started by this gate script."
+}
