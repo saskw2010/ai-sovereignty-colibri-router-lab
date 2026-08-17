@@ -1,0 +1,35 @@
+{
+  "status": "VERIFIED_MK7_ROUTER_V1_DOMAIN_AUG",
+  "base": "Qwen/Qwen2.5-0.5B",
+  "scope": "router_only",
+  "best_step": 238,
+  "counts": {
+    "real_train": 114,
+    "domain_augmentation": 70,
+    "validation": 11,
+    "test": 15,
+    "challenge": 14
+  },
+  "initial_loss": 4.99231481552124,
+  "final_loss": 0.33408036828041077,
+  "train": {
+    "top1_accuracy": 1.0,
+    "top2_hit_rate": 1.0
+  },
+  "validation": {
+    "top1_accuracy": 1.0,
+    "top2_hit_rate": 1.0
+  },
+  "test": {
+    "top1_accuracy": 1.0,
+    "top2_hit_rate": 1.0
+  },
+  "challenge": {
+    "top1_accuracy": 0.8571428656578064,
+    "top2_hit_rate": 0.8571428656578064
+  },
+  "base_frozen": true,
+  "experts_trained": false,
+  "dataset_modified": false,
+  "checkpoint": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v1.0.0-real\\router-only-qwen-mk7-v1.0-domain.pt"
+}
