@@ -1,0 +1,39 @@
+{
+  "status": "VERIFIED_SYNTHETIC_MK7_SEVEN_PILLARS_TRAINING",
+  "pillars": [
+    "O_subject_ontology",
+    "E_source_evidence",
+    "R_structure_relations",
+    "M_method_validation",
+    "A_function_application",
+    "T_time_evolution",
+    "H_human_value_context"
+  ],
+  "samples": 1400,
+  "steps": 180,
+  "experts": 7,
+  "hidden": 32,
+  "initial_loss": 2.644536018371582,
+  "final_loss": 5.449294803838711e-06,
+  "routing_accuracy": 1.0,
+  "per_pillar_accuracy": {
+    "O_subject_ontology": 1.0,
+    "E_source_evidence": 1.0,
+    "R_structure_relations": 1.0,
+    "M_method_validation": 1.0,
+    "A_function_application": 1.0,
+    "T_time_evolution": 1.0,
+    "H_human_value_context": 1.0
+  },
+  "mean_router_entropy": 6.566044612554833e-05,
+  "router_weights_changed": true,
+  "base_frozen": true,
+  "experts_frozen": true,
+  "dataset_source": "synthetic_pillar_centroids_only",
+  "existing_mk7_dataset_loaded": false,
+  "gemma_loaded": false,
+  "golden_training_loaded": false,
+  "external_weights_loaded": false,
+  "output_weights": "F:\\AI-OPEN-MODELS\\mk7-synthetic-seven-pillars-router-v0.1\\router-seven-pillars.pt",
+  "interpretation": "Mechanics proof for routing across seven MK7 pillars; not semantic quality or real MK7 Dataset evidence."
+}
