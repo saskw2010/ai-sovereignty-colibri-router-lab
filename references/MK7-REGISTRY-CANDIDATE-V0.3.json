@@ -1,0 +1,24 @@
+{
+  "version": "registry-v0.3-qwen-candidate",
+  "status": "CANDIDATE_NOT_SELECTED",
+  "base": {
+    "id": "Qwen/Qwen2.5-0.5B",
+    "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+    "frozen": true,
+    "adapter_targets": ["q_proj", "v_proj"],
+    "adapter_rank": 2,
+    "adapter_alpha": 4
+  },
+  "experts": [
+    {"id":"O_subject_ontology","capability_claim":"subject ontology","adapter_path":"TO_BE_APPROVED","provenance":"synthetic-contract-only","frozen":false},
+    {"id":"E_source_evidence","capability_claim":"source evidence","adapter_path":"TO_BE_APPROVED","provenance":"synthetic-contract-only","frozen":false},
+    {"id":"R_structure_relations","capability_claim":"structure and relations","adapter_path":"TO_BE_APPROVED","provenance":"synthetic-contract-only","frozen":false},
+    {"id":"M_method_validation","capability_claim":"method validation","adapter_path":"TO_BE_APPROVED","provenance":"synthetic-contract-only","frozen":false},
+    {"id":"A_function_application","capability_claim":"function and application","adapter_path":"TO_BE_APPROVED","provenance":"synthetic-contract-only","frozen":false},
+    {"id":"T_time_evolution","capability_claim":"time and evolution","adapter_path":"TO_BE_APPROVED","provenance":"synthetic-contract-only","frozen":false},
+    {"id":"H_human_value_context","capability_claim":"human value context","adapter_path":"TO_BE_APPROVED","provenance":"synthetic-contract-only","frozen":false}
+  ],
+  "router": {"id":"router-v0.4.0-qwen-synthetic","top_k":2,"frozen":true},
+  "modes":["mixer","specialist","plug_and_play"],
+  "real_training_authorized":false
+}
