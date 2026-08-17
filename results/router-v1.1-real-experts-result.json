@@ -1,0 +1,155 @@
+{
+  "status": "VERIFIED_MK7_ROUTER_V1_1_REAL_EXPERT_RUNTIME",
+  "device": "cuda",
+  "dtype": "float32",
+  "expert_count": 7,
+  "all_adapters_loaded": true,
+  "all_adapters_frozen": true,
+  "specialist_mode": true,
+  "top2_mixer_mode": true,
+  "nonzero_specialist_mixer_differences": 7,
+  "cases": [
+    {
+      "prompt": "ما موضوع المعرفة وما الكيانات التي تتناولها؟",
+      "router_top2": [
+        "subject_ontology",
+        "method_validation"
+      ],
+      "weights": [
+        0.9994463920593262,
+        0.0005535932723432779
+      ],
+      "specialist_logit_shape": [
+        1,
+        151936
+      ],
+      "top2_mixer_logit_shape": [
+        1,
+        151936
+      ],
+      "specialist_vs_mixer_mean_abs_logit_diff": 0.0007000579498708248
+    },
+    {
+      "prompt": "ما مصدر هذا الادعاء وما قوة دليله؟",
+      "router_top2": [
+        "source_evidence",
+        "function_application"
+      ],
+      "weights": [
+        0.8892160654067993,
+        0.11078394204378128
+      ],
+      "specialist_logit_shape": [
+        1,
+        151936
+      ],
+      "top2_mixer_logit_shape": [
+        1,
+        151936
+      ],
+      "specialist_vs_mixer_mean_abs_logit_diff": 0.09867935627698898
+    },
+    {
+      "prompt": "ما العلاقات بين المفاهيم في هذا النظام؟",
+      "router_top2": [
+        "source_evidence",
+        "structure_relations"
+      ],
+      "weights": [
+        0.7607496976852417,
+        0.23925025761127472
+      ],
+      "specialist_logit_shape": [
+        1,
+        151936
+      ],
+      "top2_mixer_logit_shape": [
+        1,
+        151936
+      ],
+      "specialist_vs_mixer_mean_abs_logit_diff": 0.32814136147499084
+    },
+    {
+      "prompt": "هل المنهج المقترح صحيح وقابل للتحقق؟",
+      "router_top2": [
+        "source_evidence",
+        "structure_relations"
+      ],
+      "weights": [
+        0.6606220602989197,
+        0.33937790989875793
+      ],
+      "specialist_logit_shape": [
+        1,
+        151936
+      ],
+      "top2_mixer_logit_shape": [
+        1,
+        151936
+      ],
+      "specialist_vs_mixer_mean_abs_logit_diff": 0.3835059404373169
+    },
+    {
+      "prompt": "كيف نستخدم هذه المعرفة في عمل فعلي؟",
+      "router_top2": [
+        "source_evidence",
+        "function_application"
+      ],
+      "weights": [
+        0.5738663077354431,
+        0.4261336922645569
+      ],
+      "specialist_logit_shape": [
+        1,
+        151936
+      ],
+      "top2_mixer_logit_shape": [
+        1,
+        151936
+      ],
+      "specialist_vs_mixer_mean_abs_logit_diff": 0.46198326349258423
+    },
+    {
+      "prompt": "كيف تطور هذا المفهوم عبر الزمن؟",
+      "router_top2": [
+        "source_evidence",
+        "function_application"
+      ],
+      "weights": [
+        0.7694095969200134,
+        0.23059041798114777
+      ],
+      "specialist_logit_shape": [
+        1,
+        151936
+      ],
+      "top2_mixer_logit_shape": [
+        1,
+        151936
+      ],
+      "specialist_vs_mixer_mean_abs_logit_diff": 0.2939630448818207
+    },
+    {
+      "prompt": "ما أثر القرار على الإنسان وأصحاب المصلحة؟",
+      "router_top2": [
+        "source_evidence",
+        "function_application"
+      ],
+      "weights": [
+        0.6645509600639343,
+        0.3354490399360657
+      ],
+      "specialist_logit_shape": [
+        1,
+        151936
+      ],
+      "top2_mixer_logit_shape": [
+        1,
+        151936
+      ],
+      "specialist_vs_mixer_mean_abs_logit_diff": 0.39646536111831665
+    }
+  ],
+  "dataset_modified": false,
+  "output": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v1.1.0-real-integrated"
+}

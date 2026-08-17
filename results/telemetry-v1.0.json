@@ -1,0 +1,262 @@
+{
+  "status": "VERIFIED_MK7_ROUTER_V1_TELEMETRY",
+  "checkpoint": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v1.0.0-real\\router-only-qwen-mk7-v1.0-domain.pt",
+  "base_frozen": true,
+  "router_only": true,
+  "experts_trained": false,
+  "datasets_untouched": true,
+  "splits": {
+    "validation.jsonl": {
+      "samples": 11,
+      "top1": 1.0,
+      "top2": 1.0,
+      "mean_entropy_nats": 0.5477748513221741,
+      "mean_entropy_normalized": 0.28150060772895813,
+      "predicted_expert_counts": {
+        "subject_ontology": 1,
+        "source_evidence": 2,
+        "structure_relations": 1,
+        "method_validation": 0,
+        "function_application": 1,
+        "time_evolution": 4,
+        "human_value_context": 2
+      },
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      ]
+    },
+    "test.jsonl": {
+      "samples": 15,
+      "top1": 1.0,
+      "top2": 1.0,
+      "mean_entropy_nats": 0.5309987664222717,
+      "mean_entropy_normalized": 0.272879421710968,
+      "predicted_expert_counts": {
+        "subject_ontology": 1,
+        "source_evidence": 1,
+        "structure_relations": 4,
+        "method_validation": 2,
+        "function_application": 2,
+        "time_evolution": 4,
+        "human_value_context": 1
+      },
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "challenge": {
+    "samples": 14,
+    "top1": 0.8571428656578064,
+    "top2": 0.8571428656578064,
+    "mean_entropy_nats": 0.8311024904251099,
+    "mean_entropy_normalized": 0.4271022379398346,
+    "predicted_expert_counts": {
+      "subject_ontology": 2,
+      "source_evidence": 4,
+      "structure_relations": 1,
+      "method_validation": 2,
+      "function_application": 2,
+      "time_evolution": 2,
+      "human_value_context": 1
+    },
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "labels": [
+    "subject_ontology",
+    "source_evidence",
+    "structure_relations",
+    "method_validation",
+    "function_application",
+    "time_evolution",
+    "human_value_context"
+  ]
+}
