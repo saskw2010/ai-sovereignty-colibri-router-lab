@@ -1,0 +1,12 @@
+{
+  "status": "VERIFIED_ROUTER_ONLY_GRADIENT_PATH",
+  "loss": 10.864100456237793,
+  "router_parameter_tensors": 12,
+  "router_parameter_tensors_with_nonzero_grad": 12,
+  "expert_parameter_tensors_with_grad": 0,
+  "all_non_router_parameters_frozen": true,
+  "backward": true,
+  "optimizer_step": false,
+  "weights_updated": false,
+  "training_started": false
+}

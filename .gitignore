@@ -1,0 +1,16 @@
+# Protected/local artifacts
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+datasets/
+models/
+training/
+Golden\ Training/
+Gemma/
+MK7\ Dataset/
+__pycache__/
+.venv/
+secrets.*
+*.env

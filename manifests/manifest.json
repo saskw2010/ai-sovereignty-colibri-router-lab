@@ -1,0 +1,33 @@
+{
+  "model_id": "QuarkML/QMoE-400",
+  "revision": "93123fb1052c727913ad0db7df4221f0f309c051",
+  "license": "Apache-2.0",
+  "storage_root": "F:\\AI-OPEN-MODELS\\qmoe-400",
+  "layers": {
+    "safetensors": "F:\\AI-OPEN-MODELS\\qmoe-400\\safetensors",
+    "source": "F:\\AI-OPEN-MODELS\\qmoe-400\\source",
+    "runtime": "F:\\AI-OPEN-MODELS\\qmoe-400\\runtime",
+    "smoke": "F:\\AI-OPEN-MODELS\\qmoe-400\\smoke"
+  },
+  "weight": {
+    "path": "F:\\AI-OPEN-MODELS\\qmoe-400\\safetensors\\model.safetensors",
+    "bytes": 1633024192,
+    "sha256": "f0233e34c8a3d454ed6bf3c1f4bb4ee461611a7c1f36be1e7bd3b2d4dfa0b013",
+    "dtype": "F32",
+    "status": "VERIFIED"
+  },
+  "architecture": {
+    "model_type": "qmoe",
+    "num_layers": 12,
+    "num_experts": 8,
+    "top_k": 2,
+    "d_model": 768,
+    "vocab_size": 50257
+  },
+  "smoke": {
+    "cpu_fp32_forward": "VERIFIED",
+    "p2000_fp32_forward": "PENDING",
+    "router_only_gradient_diagnostic": "VERIFIED",
+    "training": "NOT_STARTED"
+  }
+}

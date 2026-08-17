@@ -1,0 +1,34 @@
+{
+  "artifact_id": "colibri-qmoe-router-baseline",
+  "version": "0.1.0",
+  "publication_status": "LOCAL_STAGING_ONLY",
+  "upload_authorization": "PENDING_OWNER_REPOSITORY_AND_CREDENTIAL_GATE",
+  "model": {
+    "id": "QuarkML/QMoE-400",
+    "revision": "93123fb1052c727913ad0db7df4221f0f309c051",
+    "weight_sha256": "f0233e34c8a3d454ed6bf3c1f4bb4ee461611a7c1f36be1e7bd3b2d4dfa0b013",
+    "weight_included_in_staging": false,
+    "local_weight_path": "F:\\AI-OPEN-MODELS\\qmoe-400\\safetensors\\model.safetensors"
+  },
+  "evidence": {
+    "cpu_fp32_forward": "VERIFIED",
+    "router_telemetry": "VERIFIED",
+    "router_only_gradient_diagnostic": "VERIFIED_NO_UPDATE",
+    "multi_probe": "VERIFIED_READ_ONLY",
+    "p2000_cuda": "PENDING",
+    "training": "NOT_STARTED"
+  },
+  "safety": {
+    "golden_training_touched": false,
+    "gemma_touched": false,
+    "mk7_dataset_loaded": false,
+    "mixlora_adapter_paired_with_qmoe": false
+  },
+  "required_before_upload": [
+    "owner-approved Hugging Face repository",
+    "credential and account verification",
+    "final license review",
+    "decide whether to publish scripts/results without weights",
+    "retain P2000 status as pending unless separately verified"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "contract_id": "colibri.mk7.router",
+  "version": "0.1.0",
+  "status": "DESIGN_ONLY_NO_TRAINING",
+  "storage_policy": {"active_working_set": "F:\\AI-OPEN-MODELS", "archive": "H:\\", "do_not_touch": ["Golden Training", "Gemma", "MK7 Dataset"]},
+  "architecture": {
+    "base": {"kind": "dense_causal_lm", "weights": "frozen", "identity_required": true},
+    "experts": {"kind": "frozen_lora_adapters", "count_initial": 4, "trainable_in_future": false, "registry_required": true},
+    "router": {"kind": "learned_token_or_sequence_router", "selection": "top_2", "capacity_policy": "open_pool_with_shared_fallback", "temperature": 1.0, "load_balance_loss": "planned_not_enabled", "z_loss": "planned_not_enabled"}
+  },
+  "router_output": {"expert_ids": "[batch, sequence, top_k]", "weights": "[batch, sequence, top_k]", "entropy": "[batch, sequence]", "fallback_used": "[batch, sequence]", "schema_version": "0.1"},
+  "invariants": [
+    "base weights are unchanged by router inference",
+    "adapter identity and base model identity are recorded together",
+    "expert specialization is a hypothesis until held-out probes support it",
+    "router telemetry is not training evidence",
+    "no automatic merging of Intent and MK7 adapters"
+  ],
+  "initial_expert_registry": [
+    {"id": "shared", "role": "shared general capability", "status": "planned"},
+    {"id": "erp", "role": "ERP/Odoo/SAP/SQL", "status": "planned"},
+    {"id": "arabic_mena", "role": "Arabic/MENA language and contracts", "status": "planned"},
+    {"id": "code_data", "role": "company code and data/reporting", "status": "planned"}
+  ],
+  "evaluation_gates": ["shape_and_identity", "frozen_base_check", "router_telemetry", "held_out_domain_probe", "fallback_and_abstention", "latency_memory", "reproducible_manifest"],
+  "training_authorization": "NOT_AUTHORIZED"
+}
