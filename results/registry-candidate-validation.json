@@ -1,0 +1,14 @@
+{
+  "status": "VERIFIED_REGISTRY_CANDIDATE_READ_ONLY",
+  "checks": {
+    "candidate_not_selected": true,
+    "base_is_qwen": true,
+    "revision_pinned": true,
+    "targets_pinned": true,
+    "seven_experts": true,
+    "paths_not_falsely_claimed": true,
+    "top_k_two": true,
+    "training_not_authorized": true
+  },
+  "training_started": false
+}
