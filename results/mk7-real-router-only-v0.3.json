@@ -1,0 +1,43 @@
+{
+  "status": "VERIFIED_MK7_REAL_ROUTER_ONLY_V0_3",
+  "base": "Qwen/Qwen2.5-0.5B",
+  "base_revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+  "device": "cuda",
+  "scope": "router_only",
+  "steps": 120,
+  "label_set": [
+    "subject_ontology",
+    "source_evidence",
+    "structure_relations",
+    "method_validation",
+    "function_application",
+    "time_evolution",
+    "human_value_context"
+  ],
+  "counts": {
+    "train": 114,
+    "validation": 11,
+    "test": 15
+  },
+  "initial_loss": 5.543946743011475,
+  "final_loss": 1.2297032299102284e-05,
+  "train": {
+    "top1_accuracy": 1.0,
+    "top2_hit_rate": 1.0
+  },
+  "validation": {
+    "top1_accuracy": 0.6363636255264282,
+    "top2_hit_rate": 0.8181818127632141
+  },
+  "test": {
+    "top1_accuracy": 0.9333333373069763,
+    "top2_hit_rate": 1.0
+  },
+  "base_frozen": true,
+  "experts_trained": false,
+  "dataset_modified": false,
+  "gemma_loaded": false,
+  "golden_training_loaded": false,
+  "optimizer_scope": "bridge_and_router_only",
+  "checkpoint": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v0.3.0-real\\router-only-qwen-mk7-v0.3.pt"
+}
