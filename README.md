@@ -8,6 +8,26 @@
 
 الصورة تلخص المسار: Base مجمّد، LoRA Adapters مستقلة، ثم اختيار اختياري بين Mixer Top-2 أو Specialist Top-1 أو Shared/Unknown Fallback.
 
+## Infographic directions
+
+### 1. LoRA Expert Lifecycle
+
+![LoRA Expert Lifecycle](docs/images/colibri-lora-expert-lifecycle-v1.png)
+
+كل LoRA يمكن أن يبقى Plug-and-Play، أو يعمل كـSpecialist، أو يدخل في Merge/Composition اختياري بعد موافقة.
+
+### 2. Router Modes
+
+![Router Modes](docs/images/colibri-router-modes-v1.png)
+
+نفس Base المجمّد يدعم Mixer Top-2 أو Truth Specialist أو تحميل Adapter عند الطلب.
+
+### 3. ARB / Expert Modman
+
+![ARB Expert Registry](docs/images/colibri-arb-expert-registry-v1.png)
+
+الـRegistry يحمل الـflags والـprovenance والنسخ والـhash قبل أن يصل الطلب إلى الـRouter.
+
 ## الحالة الحالية — 2026-08-17
 
 - QMoE-400 FP32 smoke على CPU وQuadro P2000: `VERIFIED`.
