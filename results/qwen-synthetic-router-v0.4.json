@@ -1,0 +1,19 @@
+{
+  "status": "VERIFIED_QWEN_EXPANDED_SYNTHETIC_ROUTER_V0_4",
+  "version": "0.4.0-qwen-synthetic",
+  "device": "cuda",
+  "samples": 35,
+  "train_samples": 28,
+  "validation_samples": 7,
+  "steps": 1000,
+  "initial_loss": 5.14021635055542,
+  "final_loss": 1.9584329891131347e-07,
+  "train_accuracy": 1.0,
+  "validation_top1_accuracy": 0.7142857313156128,
+  "validation_top2_hit_rate": 1.0,
+  "base_frozen": true,
+  "real_mk7_dataset_loaded": false,
+  "gemma_loaded": false,
+  "golden_training_loaded": false,
+  "checkpoint": "F:\\AI-OPEN-MODELS\\mk7-versions\\router-v0.4.0-qwen-synthetic\\qwen-router-v0.4-synthetic.pt"
+}
