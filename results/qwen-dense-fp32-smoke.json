@@ -1,0 +1,22 @@
+{
+  "status": "VERIFIED_QWEN_DENSE_FP32_FORWARD_SMOKE",
+  "model_id": "Qwen/Qwen2.5-0.5B",
+  "local_path": "F:\\AI-OPEN-MODELS\\qwen2.5-0.5b",
+  "files": {
+    "model.safetensors": {
+      "bytes": 988097824,
+      "sha256": "88C142557820CCAD55BB59756BFCFCF891DE9CC6202816BD346445188A0ED342"
+    },
+    "config.json": {
+      "sha256": "479DCF0C5286339E41AD3992CD08AE88A467C4187587936248E2B7C96283484B"
+    }
+  },
+  "device": "cuda:Quadro P2000",
+  "dtype": "float32",
+  "logits_shape": [1, 6, 151936],
+  "elapsed_sec": 0.34,
+  "training_started": false,
+  "optimizer_step": false,
+  "lora_loaded": false,
+  "dataset_loaded": false
+}
