@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mk7-v0.2-questionnaire.schema.json",
+  "title": "MK7 v0.2-real Questionnaire Record",
+  "description": "سجل واحد من كويشنير بناء mk7-v0.2-real. التصنيف مطابق للـ registry المعتمد ذي السبعة (validate_mk7_registry_candidate.py) + Shared fallback. لا يمنح أي تصريح تدريب.",
+  "type": "object",
+  "required": ["input", "language", "decidability", "difficulty", "group_id", "source_type", "source_id", "quality_status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^mk7-v0\\.2-[0-9]{6}$",
+      "description": "يُسند آليًا عند التصدير — فارغ في مرحلة الكويشنير"
+    },
+    "input": {
+      "type": "string",
+      "minLength": 1,
+      "description": "النص الأصلي حرفيًا من المصدر بدون إعادة صياغة"
+    },
+    "language": {
+      "type": "string",
+      "enum": ["ar", "en", "mixed"]
+    },
+    "decidability": {
+      "type": "string",
+      "enum": ["decisive", "ambiguous", "unknown"],
+      "description": "decisive يتطلب target_expert؛ ambiguous يتطلب allowed_experts بخبيرين؛ unknown لا يفرض label"
+    },
+    "target_expert": {
+      "type": "string",
+      "enum": [
+        "O_subject_ontology",
+        "E_source_evidence",
+        "R_structure_relations",
+        "M_method_validation",
+        "A_function_application",
+        "T_time_evolution",
+        "H_human_value_context",
+        "unknown"
+      ],
+      "description": "إلزامي غير فارغ عندما decidability=decisive. ملاحظة: D_decision_support غير معتمد حتى قرار المالك (انظر الكويشنير قسم 7)"
+    },
+    "allowed_experts": {
+      "type": "array",
+      "maxItems": 2,
+      "items": {
+        "type": "string",
+        "enum": [
+          "O_subject_ontology",
+          "E_source_evidence",
+          "R_structure_relations",
+          "M_method_validation",
+          "A_function_application",
+          "T_time_evolution",
+          "H_human_value_context"
+        ]
+      },
+      "description": "يُستخدم عند ambiguous لتقييم Top-2"
+    },
+    "pillar": {
+      "type": "string",
+      "enum": [
+        "subject_ontology",
+        "source_evidence",
+        "structure_relations",
+        "method_validation",
+        "function_application",
+        "time_evolution",
+        "human_value_context"
+      ],
+      "description": "يُشتق آليًا من target_expert بحذف بادئة الحرف"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["easy", "medium", "hard"]
+    },
+    "group_id": {
+      "type": "string",
+      "minLength": 3,
+      "description": "العائلة الدلالية — كل paraphrases بنفس المعرف؛ التقسيم المستقبلي على مستوى group_id"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["owner_curated", "internal_procedure", "public_document", "interview", "synthetic"]
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^src-[0-9]{4,}$",
+      "description": "معرف opaque؛ الربط الفعلي للمصدر يُحفظ خارج Git"
+    },
+    "ood_flag": {
+      "type": "boolean",
+      "default": false
+    },
+    "boundary_flag": {
+      "type": "boolean",
+      "default": false
+    },
+    "quality_status": {
+      "type": "string",
+      "enum": ["draft", "approved", "rejected"]
+    },
+    "record_type": {
+      "type": "string",
+      "enum": ["definition", "explanation", "worked_example", "question_answer", "misconception_check", "prerequisite_check", "assessment"],
+      "description": "نوع السجل التعليمي وفق mk7-view.schema.json — الافتراضي question_answer"
+    },
+    "ko_node_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^ko\\.[a-z0-9][a-z0-9._-]*$"
+      },
+      "description": "ربط اختياري بعقد منهج Knowledge-OS (curriculum nodes) — يكتب مفصولاً بـ ; في الـCSV"
+    },
+    "provenance_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "يُحسب آليًا عند التصدير"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "decidability": { "const": "decisive" } } },
+      "then": { "required": ["target_expert"], "properties": { "target_expert": { "enum": ["O_subject_ontology", "E_source_evidence", "R_structure_relations", "M_method_validation", "A_function_application", "T_time_evolution", "H_human_value_context"] } } }
+    },
+    {
+      "if": { "properties": { "decidability": { "const": "ambiguous" } } },
+      "then": { "required": ["allowed_experts"], "properties": { "allowed_experts": { "minItems": 2, "maxItems": 2 } } }
+    },
+    {
+      "if": { "properties": { "decidability": { "const": "unknown" } } },
+      "then": { "properties": { "target_expert": { "const": "unknown" } } }
+    },
+    {
+      "if": { "properties": { "source_type": { "const": "synthetic" } } },
+      "then": { "properties": { "notes": { "type": "string", "minLength": 1, "description": "synthetic يجب تبريره في notes ويُستبعد من Held-out الواقعي" } } }
+    }
+  ]
+}

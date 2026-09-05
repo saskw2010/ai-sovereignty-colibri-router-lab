@@ -1,0 +1,3 @@
+input,language,decidability,target_expert,allowed_experts,difficulty,group_id,source_type,source_id,record_type,ko_node_ids,ood_flag,boundary_flag,quality_status,notes
+"EXAMPLE — احذف هذا الصف: ما موضوع المعرفة وما الكيانات التي تتناولها؟",ar,decisive,O_subject_ontology,,easy,topic-ontology-demo-01,owner_curated,src-0001,question_answer,,false,false,draft,صف توضيحي فقط
+"EXAMPLE — احذف هذا الصف: كيف نوازن أثر هذا القرار على أصحاب المصلحة مقابل التكلفة؟",ar,ambiguous,H_human_value_context,"H_human_value_context|M_method_validation",hard,topic-stakeholder-demo-01,owner_curated,src-0002,assessment,;ko.math.v0.1.example-node,false,true,draft,ambiguous + مرتبط بعقدة Knowledge-OS

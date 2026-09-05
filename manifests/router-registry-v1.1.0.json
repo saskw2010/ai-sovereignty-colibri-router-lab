@@ -1,0 +1,47 @@
+{
+  "artifact": "router_registry",
+  "registry_version": "router-v1.1.0",
+  "status": "OWNER_APPROVED_IMMUTABLE",
+  "approved_by": "owner (saskw2010)",
+  "approved_at": "2026-09-05",
+  "supersedes_reference": "router-v0.2.0 (as referenced by MK7-OWNER-REVIEW-PACKET-V0.3)",
+  "evidence": [
+    "results/router-v1.1-real-experts-result.json — VERIFIED_MK7_ROUTER_V1_1_REAL_EXPERT_RUNTIME",
+    "smoke/validate_mk7_registry_candidate.py — expected registry list",
+    "data/mk7-v0.2-real/MK7-ALIGNMENT-AND-OWNER-DECISIONS-V0.1.md — decision D2"
+  ],
+  "framework": "Mustafian Knowledge — Seven-Lens Framework (MK-7)",
+  "lens_count": 7,
+  "experts": [
+    { "id": "O_subject_ontology", "role": "subject and ontology of the knowledge", "status": "validated_frozen_candidate" },
+    { "id": "E_source_evidence", "role": "source and evidence strength", "status": "validated_frozen_candidate" },
+    { "id": "R_structure_relations", "role": "structural relations between concepts", "status": "validated_frozen_candidate" },
+    { "id": "M_method_validation", "role": "method validity and verifiability", "status": "validated_frozen_candidate" },
+    { "id": "A_function_application", "role": "practical application of knowledge", "status": "validated_frozen_candidate" },
+    { "id": "T_time_evolution", "role": "evolution over time", "status": "validated_frozen_candidate" },
+    { "id": "H_human_value_context", "role": "impact on humans and stakeholders", "status": "validated_frozen_candidate" }
+  ],
+  "shared_fallback": {
+    "id": "shared",
+    "role": "runtime fallback (router_output.fallback_used) — NOT a dataset label or analysis lens",
+    "promotable_to_lens": "only via a new immutable registry version through the gates"
+  },
+  "base_model_policy": {
+    "decision_ref": "data/mk7-v0.2-real/MK7-ALIGNMENT-AND-OWNER-DECISIONS-V0.1.md — decision D1",
+    "development_base": { "id": "Qwen/Qwen2.5-0.5B", "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987", "purpose": "router experiments (validated path)" },
+    "production_base": { "id": "QuarkML/QMoE-400", "revision": "93123fb1052c727913ad0db7df4221f0f309c051", "purpose": "production target after an explicit promoted gate" }
+  },
+  "dataset_authorization": {
+    "sky365-mustafian-knowledge-v0.1": {
+      "decision_ref": "decision D3",
+      "approved_use": "frozen-router-baseline evaluation and comparisons only",
+      "approved_use_excludes": ["any tuning or optimizer step"],
+      "training_started": false
+    }
+  },
+  "invariants": [
+    "registry is immutable; changes open a sibling version",
+    "dataset labeling uses the seven lenses only",
+    "no training is authorized by this artifact"
+  ]
+}
