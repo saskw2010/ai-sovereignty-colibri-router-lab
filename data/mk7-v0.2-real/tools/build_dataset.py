@@ -188,6 +188,10 @@ def main():
             continue
         rec = build_record(row, seq)
         rec["split"] = assign_split(rec["group_id"])
+        # Governance: curriculum-generated records never enter the real held-out
+        # split (questionnaire 4.2 / alignment doc) — demote to validation.
+        if rec["source_type"] == "curriculum_generated" and rec["split"] == "held_out":
+            rec["split"] = "validation"
         # Hash covers every field except id itself; reconcile() uses the same rule.
         rec["provenance_hash"] = sha256_bytes(canonical({k: v for k, v in rec.items() if k not in ("id", "provenance_hash")}))
         records.append(rec)
