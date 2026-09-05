@@ -50,24 +50,64 @@ def tokenize(text: str) -> list:
 def load_reference_chunks(ref_dir: Path) -> list:
     chunks = []
     for p in sorted(ref_dir.rglob("*")):
-        if p.suffix.lower() not in (".txt", ".md"):
-            continue
-        text = p.read_text(encoding="utf-8", errors="replace")
-        file_sha = "sha256:" + hashlib.sha256(p.read_bytes()).hexdigest()
-        for i in range(0, len(text), CHUNK_SIZE):
-            part = text[i:i + CHUNK_SIZE].strip()
-            if len(part) > 80:
-                chunks.append({"file": p.name, "file_sha256": file_sha, "offset": i, "text": part})
+        if p.suffix.lower() in (".txt", ".md"):
+            text = p.read_text(encoding="utf-8", errors="replace")
+            file_sha = "sha256:" + hashlib.sha256(p.read_bytes()).hexdigest()
+            for i in range(0, len(text), CHUNK_SIZE):
+                part = text[i:i + CHUNK_SIZE].strip()
+                if len(part) > 80:
+                    chunks.append({"file": p.name, "file_sha256": file_sha, "offset": i, "text": part})
+        elif p.suffix.lower() == ".pdf":
+            import fitz  # PyMuPDF — page-level chunks with page provenance
+            file_sha = "sha256:" + hashlib.sha256(p.read_bytes()).hexdigest()
+            doc = fitz.open(p)
+            with doc:
+                for page_no, page in enumerate(doc, start=1):
+                    part = page.get_text().strip()
+                    if len(part) > 80:
+                        chunks.append({"file": p.name, "file_sha256": file_sha,
+                                       "offset": page_no, "page": page_no, "text": part})
+    for ch in chunks:  # tokenize once, reuse across all questions
+        ch["tokens"] = Counter(tokenize(ch["text"]))
     return chunks
 
 
+# Cross-lingual retrieval bridge: Arabic lens terms -> English reference terms.
+# Transparent heuristic (not machine translation) — keeps TF-IDF stdlib-only.
+AR_EN_LEXICON = {
+    "موضوع": ["subject", "concept", "topics"], "كيانات": ["entities", "objects", "sets"],
+    "مراجع": ["references", "sources"], "أدلة": ["evidence", "proof", "theorems"],
+    "يرتبط": ["related", "relation", "between"], "علاقات": ["relations", "relationships"],
+    "بنية": ["structure", "structural"], "مجاور": ["adjacent", "neighboring"],
+    "صحة": ["valid", "validity", "correct"], "مناهج": ["methods", "method"],
+    "براهين": ["proof", "proofs", "prove"], "تحقق": ["verify", "verification", "check"],
+    "نطبق": ["apply", "application"], "تطبيق": ["application", "apply", "use"],
+    "مسألة": ["problem", "example", "exercise"], "خطوات": ["steps", "solution"],
+    "تطورت": ["history", "development", "evolution"], "تاريخيًا": ["history", "historical"],
+    "أثر": ["impact", "effect", "applications"], "إنسان": ["people", "human", "society"],
+    "أصحاب المصلحة": ["stakeholders"], "الصناعة": ["industry", "engineering"],
+    "أساسية": ["fundamental", "basic", "core"], "معايير": ["criteria", "standards"],
+    "زمن": ["time"], "تطور": ["evolution", "development"], "تعريف": ["definition"],
+    "الحياة": ["life", "real", "world"], "المفاهيم": ["concepts"], "الحدود": ["boundaries", "limits"],
+    "قوة": ["strength", "quality"], "يستند": ["based", "reference"],
+}
+
+
+def expand_query(q_tokens: Counter) -> Counter:
+    expanded = Counter(q_tokens)
+    for text, weight in q_tokens.items():
+        for en in AR_EN_LEXICON.get(text, []):
+            expanded[en] += weight
+    return expanded
+
+
 def retrieve(question: str, chunks: list, top_k: int) -> list:
-    q_tokens = Counter(tokenize(question))
+    q_tokens = expand_query(Counter(tokenize(question)))
     if not q_tokens:
         return []
     scored = []
     for ch in chunks:
-        c_tokens = Counter(tokenize(ch["text"]))
+        c_tokens = ch["tokens"]
         common = set(q_tokens) & set(c_tokens)
         if not common:
             continue
