@@ -57,7 +57,7 @@ def validate_row(row: dict, idx: int) -> list:
         errors.append(f"language '{row['language']}' not in ar/en/mixed")
     if row["difficulty"] not in ("easy", "medium", "hard"):
         errors.append(f"difficulty '{row['difficulty']}' invalid")
-    if row["source_type"] not in ("owner_curated", "internal_procedure", "public_document", "interview", "synthetic"):
+    if row["source_type"] not in ("owner_curated", "internal_procedure", "public_document", "interview", "synthetic", "curriculum_generated"):
         errors.append(f"source_type '{row['source_type']}' invalid")
     if row["quality_status"] not in ("draft", "approved", "rejected"):
         errors.append(f"quality_status '{row['quality_status']}' invalid")
@@ -140,6 +140,9 @@ def batch_checks(records: list) -> dict:
             exact_dupes += 1  # identical text across different groups
         seen[key] = r["group_id"]
     zero_coverage = [e for e in REGISTRY if per_expert.get(e, 0) == 0]
+    # Governance: curriculum-generated records must never land in the real held-out split.
+    generated_in_held_out = sum(
+        1 for r in approved if r["source_type"] == "curriculum_generated" and r.get("split") == "held_out")
     return {
         "approved_count": len(approved),
         "per_expert": per_expert,
@@ -148,6 +151,7 @@ def batch_checks(records: list) -> dict:
         "experts_with_zero_coverage": zero_coverage,
         "exact_duplicates_across_groups": exact_dupes,
         "synthetic_count": sum(1 for r in approved if r["source_type"] == "synthetic"),
+        "curriculum_generated_in_held_out": generated_in_held_out,
     }
 
 

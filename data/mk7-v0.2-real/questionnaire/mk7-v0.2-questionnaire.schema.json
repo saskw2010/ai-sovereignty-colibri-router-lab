@@ -80,7 +80,8 @@
     },
     "source_type": {
       "type": "string",
-      "enum": ["owner_curated", "internal_procedure", "public_document", "interview", "synthetic"]
+      "enum": ["owner_curated", "internal_procedure", "public_document", "interview", "synthetic", "curriculum_generated"],
+      "description": "curriculum_generated = مشتق من عقد منهج Knowledge-OS معتمدة؛ مسموح في train/validation فقط ولا يدخل held_out الواقعي"
     },
     "source_id": {
       "type": "string",
