@@ -1,0 +1,64 @@
+{
+  "dataset_version": "mk7-v0.2-real",
+  "status": "PENDING_OWNER_APPROVAL",
+  "training_authorization": "NOT_AUTHORIZED",
+  "created_at_utc": "2026-09-05T14:18:36.833136+00:00",
+  "generator": "data/mk7-v0.2-real/tools/build_dataset.py",
+  "inputs": {
+    "questionnaire_csv": {
+      "path": "math-curriculum-questions.csv",
+      "sha256": "sha256:afba2482a29de5d95cf87993ba9a9b11c53b7740c42d62ac26029ff7d1f7e424"
+    }
+  },
+  "record_count": 343,
+  "registry": [
+    "O_subject_ontology",
+    "E_source_evidence",
+    "R_structure_relations",
+    "M_method_validation",
+    "A_function_application",
+    "T_time_evolution",
+    "H_human_value_context"
+  ],
+  "split_policy": {
+    "unit": "group_id",
+    "seed": "20260905",
+    "ratios": {
+      "train": 0.7,
+      "validation": 0.15,
+      "held_out": 0.15
+    }
+  },
+  "artifacts": {
+    "dataset_jsonl_sha256": "sha256:8f7ab9474ac3e875f372d40486a8f8b75c3a1f30ae74a83f186b1a6e5afeb5d7"
+  },
+  "batch_checks": {
+    "approved_count": 343,
+    "per_expert": {
+      "O_subject_ontology": 45,
+      "E_source_evidence": 45,
+      "R_structure_relations": 73,
+      "M_method_validation": 45,
+      "A_function_application": 45,
+      "T_time_evolution": 45,
+      "H_human_value_context": 45
+    },
+    "per_language": {
+      "mixed": 73,
+      "ar": 270
+    },
+    "per_difficulty": {
+      "easy": 42,
+      "medium": 77,
+      "hard": 224
+    },
+    "experts_with_zero_coverage": [],
+    "exact_duplicates_across_groups": 0,
+    "synthetic_count": 0,
+    "curriculum_generated_in_held_out": 0
+  },
+  "reconciliation": {
+    "status": "RECONCILED",
+    "records_read": 343
+  }
+}
